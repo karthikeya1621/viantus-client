@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "viantus-files.s3.ap-south-1.amazonaws.com"],
   },
 };
