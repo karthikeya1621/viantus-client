@@ -20,7 +20,7 @@ const ServicePage = ({ data }: any) => {
         <div className={styles.bgimage}>
           {data?.banner && (
             <Image
-              src={`${getConfig().serverApiUrl}${data?.banner?.url}`}
+              src={`${data?.banner?.url}`}
               layout="fill"
               objectFit="cover"
             />
@@ -40,7 +40,9 @@ const ServicePage = ({ data }: any) => {
         <div className="col-span-4">
           <div className={styles.features}>
             {data?.features?.map((feature: any) => (
-              <div className={styles.feature}>{feature?.title}</div>
+              <div key={feature?.id} className={styles.feature}>
+                {feature?.title}
+              </div>
             ))}
           </div>
         </div>

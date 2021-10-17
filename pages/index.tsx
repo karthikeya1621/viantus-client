@@ -28,7 +28,7 @@ export default function Home({ data }: any) {
             <Image
               priority={true}
               layout="fill"
-              src={`${getConfig().serverApiUrl}${data?.hero?.background?.url}`}
+              src={`${data?.hero?.background?.url}`}
               objectFit="cover"
             />
           </div>
@@ -72,9 +72,7 @@ export default function Home({ data }: any) {
                 </div>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${getConfig().serverApiUrl}${
-                      data.featuredServices[0].banner.formats.small.url
-                    }`}
+                    src={`${data.featuredServices[0].banner.formats.small.url}`}
                     layout="fill"
                     objectFit="cover"
                   />
@@ -85,9 +83,7 @@ export default function Home({ data }: any) {
               <div className={styles.servicebox}>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${getConfig().serverApiUrl}${
-                      data.featuredServices[1].banner.formats.small.url
-                    }`}
+                    src={`${data.featuredServices[1].banner.formats.small.url}`}
                     layout="fill"
                     objectFit="cover"
                   />
@@ -111,9 +107,7 @@ export default function Home({ data }: any) {
                 </div>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${getConfig().serverApiUrl}${
-                      data.featuredServices[2].banner.formats.small.url
-                    }`}
+                    src={`${data.featuredServices[2].banner.formats.small.url}`}
                     layout="fill"
                     objectFit="cover"
                   />
@@ -124,9 +118,7 @@ export default function Home({ data }: any) {
               <div className={styles.servicebox}>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${getConfig().serverApiUrl}${
-                      data.featuredServices[3].banner.formats.small.url
-                    }`}
+                    src={`${data.featuredServices[3].banner.formats.small.url}`}
                     layout="fill"
                     objectFit="cover"
                   />
@@ -153,9 +145,7 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[0].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
-                        src={`${getConfig().serverApiUrl}${
-                          data.whyUs.reason[0].icon.formats.small
-                        }`}
+                        src={`${data.whyUs.reason[0].icon.formats.small}`}
                       />
                     </div>
                   ) : (
@@ -172,9 +162,7 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[2].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
-                        src={`${getConfig().serverApiUrl}${
-                          data.whyUs.reason[2].icon.formats.small
-                        }`}
+                        src={`${data.whyUs.reason[2].icon.formats.small}`}
                       />
                     </div>
                   ) : (
@@ -193,9 +181,7 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[1].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
-                        src={`${getConfig().serverApiUrl}${
-                          data.whyUs.reason[1].icon.formats.small
-                        }`}
+                        src={`${data.whyUs.reason[1].icon.formats.small}`}
                       />
                     </div>
                   ) : (
@@ -212,9 +198,7 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[3].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
-                        src={`${getConfig().serverApiUrl}${
-                          data.whyUs.reason[3].icon.formats.small
-                        }`}
+                        src={`${data.whyUs.reason[3].icon.formats.small}`}
                       />
                     </div>
                   ) : (
@@ -243,9 +227,7 @@ export default function Home({ data }: any) {
                       <Image
                         placeholder="blur"
                         blurDataURL="/images/placeholder.gif"
-                        src={`${getConfig().serverApiUrl}${
-                          blog?.banner?.formats?.small?.url
-                        }`}
+                        src={`${blog?.banner?.formats?.small?.url}`}
                         layout="fill"
                         objectFit="cover"
                       />

@@ -20,7 +20,7 @@ const BlogPage = ({ data }: any) => {
         <div className={styles.bgimage}>
           {data?.banner && (
             <Image
-              src={`${getConfig().serverApiUrl}${data?.banner?.url}`}
+              src={`${data?.banner?.url}`}
               layout="fill"
               objectFit="cover"
             />
