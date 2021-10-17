@@ -1,0 +1,38 @@
+.blogpagecontainer {
+  .bannercontainer {
+    @apply relative w-full;
+    transform: translateY(-80px);
+    height: 400px;
+
+    .bgimage {
+      @apply absolute w-full h-full;
+      z-index: 0;
+    }
+
+    .bgoverlay {
+      @apply absolute w-full h-full bg-black opacity-70 pointer-events-none;
+      z-index: 1;
+    }
+
+    .bannercontent {
+      @apply relative w-full mx-auto max-w-screen-lg text-center;
+      z-index: 3;
+      h1 {
+        @apply text-6xl font-extrabold text-white;
+        padding-top: 180px;
+      }
+    }
+  }
+
+  .blogcontent {
+    .bloginfo {
+      @apply py-2 mb-4 border-b-2 border-primary text-sm flex justify-between;
+
+      div {
+        span {
+          @apply text-gray-500 hover:text-primary mx-1 text-lg cursor-pointer;
+        }
+      }
+    }
+  }
+}

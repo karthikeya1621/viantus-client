@@ -1,0 +1,62 @@
+.headercontainer {
+  @apply w-full bg-transparent relative text-white transition-all px-3;
+  transition-duration: 600ms;
+  height: 80px;
+  z-index: 1000;
+
+  &.sticky {
+    @apply fixed bg-white shadow-md text-gray-700;
+  }
+
+  .logo {
+    display: block;
+    width: 100%;
+    height: 60%;
+    position: relative;
+  }
+
+  nav {
+    ul {
+      @apply flex justify-end;
+
+      li {
+        @apply px-4 cursor-pointer;
+        span {
+          @apply hover:opacity-80;
+        }
+      }
+    }
+
+    .menuitem {
+      @apply font-semibold relative flex items-center transition-all;
+      border-bottom: 5px solid transparent;
+
+      &:hover {
+        border-bottom: 5px solid theme("textColor.primary.light");
+
+        .submenu {
+          @apply bg-white;
+          opacity: 1;
+          transform: translateY(5px);
+          pointer-events: all;
+        }
+      }
+
+      .submenu {
+        @apply absolute rounded-lg rounded-tl-none shadow-xl left-0 py-3 transition-all text-gray-800;
+        top: 100%;
+        min-width: 200px;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+
+        ul {
+          @apply flex flex-col;
+          li {
+            @apply max-w-max my-2;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.footercontainer {
+  @apply w-full bg-gray-800 text-white;
+
+  h3 {
+    @apply font-bold text-gray-300 mb-3 cursor-default uppercase;
+  }
+
+  h6 {
+    @apply cursor-pointer my-1 text-sm text-gray-100;
+  }
+}

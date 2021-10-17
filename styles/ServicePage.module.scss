@@ -1,0 +1,36 @@
+.servicepagecontainer {
+  .bannercontainer {
+    @apply relative w-full;
+    transform: translateY(-80px);
+    height: 400px;
+
+    .bgimage {
+      @apply absolute w-full h-full;
+      z-index: 0;
+    }
+
+    .bgoverlay {
+      @apply absolute w-full h-full bg-black opacity-70 pointer-events-none;
+      z-index: 1;
+    }
+
+    .bannercontent {
+      @apply relative w-full mx-auto max-w-screen-lg text-center;
+      z-index: 3;
+      h1 {
+        @apply text-6xl font-extrabold text-white;
+        padding-top: 180px;
+      }
+    }
+  }
+
+  .servicecontent {
+  }
+
+  .features {
+    @apply flex flex-wrap justify-center;
+    .feature {
+      @apply mx-1 my-3 px-5 py-7 text-sm font-semibold shadow-md rounded-md bg-primary text-white;
+    }
+  }
+}

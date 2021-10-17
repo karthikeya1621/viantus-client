@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/npm/@mdi/font@6.2.95/css/materialdesignicons.min.css");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.heading1 {
+  @apply font-semibold text-3xl text-black relative mx-auto max-w-max inline-block;
+
+  &::after {
+    @apply absolute bg-primary;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    bottom: -10px;
+    left: -5px;
+  }
+}
+
+.button1 {
+  @apply px-4 py-2 block bg-primary text-white transition-all hover:shadow-sm cursor-pointer rounded-full;
+  outline: 0;
+  border: 0;
+}
+
+.formgroup {
+  @apply pb-5 mb-1 relative;
+  label {
+    @apply block mb-1;
+    span {
+      @apply text-red-400;
+    }
+  }
+  & > input,
+  & > textarea {
+    @apply w-full rounded border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block;
+    resize: none;
+  }
+
+  select {
+    @apply w-full;
+  }
+
+  .errors {
+    @apply absolute text-xs text-red-500 bottom-0;
+  }
+
+  .phoneinput {
+    @apply w-full;
+  }
+}
