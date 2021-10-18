@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "../styles/ContactPage.module.scss";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { AppContext } from "../context/AppContext";
 
 const ContactPage = () => {
   const {
@@ -12,6 +13,8 @@ const ContactPage = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const { siteInfo } = useContext(AppContext);
 
   const onSubmit = (data: any) => {
     if (Object.keys(errors).length === 0) {
@@ -56,21 +59,15 @@ const ContactPage = () => {
       <div className="grid grid-cols-6 gap-2 w-full mx-auto max-w-screen-lg">
         <div className="col-span-3">
           <h1 className="heading1 mb-8">Interested in working with us?</h1>
-          <div className={styles.addressbox}>
-            <strong className="uppercase inline-block pb-2 text-primary">
-              Regd. Office Address
-            </strong>
-            <p>
-              6-1/16-13/1, Peddi raju Street, Chitti Nagar, One Town,
-              Vijayawada, Krishna District, Andhra Pradesh, PIN: 520001, India
-            </p>
-          </div>
-          <div className={styles.addressbox}>
-            <strong className="uppercase inline-block pb-2 text-primary">
-              Corporate Headquarters
-            </strong>
-            <p>808 Chestnut St, PMB 1024, Chattanooga, TN 37402</p>
-          </div>
+          {siteInfo &&
+            siteInfo?.officeLocations?.map((office: any) => (
+              <div key={office?.id} className={styles.addressbox}>
+                <strong className="uppercase inline-block pb-2 text-primary">
+                  {office?.title}
+                </strong>
+                <p>{office?.address}</p>
+              </div>
+            ))}
         </div>
         <div className="col-span-3">
           <h2 className="heading1">Send us a message</h2>
@@ -87,13 +84,11 @@ const ContactPage = () => {
               {errors.name && <span className="errors">Name is required</span>}
             </div>
             <div className="formgroup">
-              <label>
-                Organization <span>*</span>
-              </label>
+              <label>Organization</label>
               <input
                 type="text"
                 className="form-input"
-                {...register("organization", { required: true })}
+                {...register("organization")}
               />
               {errors.organization && (
                 <span className="errors">Organization is required</span>

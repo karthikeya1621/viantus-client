@@ -51,6 +51,11 @@ const Header = () => {
         <div className="col-span-8 h-full">
           <nav className="h-full w-full justify-end items-center">
             <ul className="h-full">
+              <Link href="/" passHref>
+                <a className={styles.menuitem}>
+                  <li>Home</li>
+                </a>
+              </Link>
               <li className={styles.menuitem}>
                 <span>Services</span>
                 {menu && (
@@ -76,6 +81,11 @@ const Header = () => {
               <Link href="/blog" passHref>
                 <a className={styles.menuitem}>
                   <li>Blog</li>
+                </a>
+              </Link>
+              <Link href="/careers" passHref>
+                <a className={styles.menuitem}>
+                  <li>Careers</li>
                 </a>
               </Link>
               <Link href="/contact" passHref>
