@@ -1,0 +1,38 @@
+.careerspagecontainer {
+  @apply bg-gray-100;
+  .bannercontainer {
+    @apply relative w-full;
+    transform: translateY(-80px);
+    height: 400px;
+
+    .bgimage {
+      @apply absolute w-full h-full;
+      z-index: 0;
+    }
+
+    .bgoverlay {
+      @apply absolute w-full h-full bg-black opacity-70 pointer-events-none;
+      z-index: 1;
+    }
+
+    .bannercontent {
+      @apply relative w-full mx-auto max-w-screen-lg text-center;
+      z-index: 3;
+      h1 {
+        @apply text-6xl font-extrabold text-white;
+        padding-top: 180px;
+      }
+    }
+  }
+
+  .careerbox {
+    @apply px-5 py-2 bg-white rounded-md hover:shadow-lg mb-6 transition-shadow;
+    h3 {
+      @apply font-semibold text-xl text-gray-700;
+    }
+
+    .location {
+      @apply bg-gray-200 rounded-full px-3 py-1 text-sm mr-3;
+    }
+  }
+}

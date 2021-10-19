@@ -90,6 +90,24 @@ export const getMenus = async () => {
   }
 };
 
+export const getCareers = async () => {
+  try {
+    const response = await fetch(
+      `${
+        process.env.NEXT_PUBLIC_SERVER_API_URL || process.env.SERVER_API_URL
+      }/careers`
+    );
+    const result = await response.json();
+    if (result instanceof Array) {
+      return { status: 200, message: "Success", data: result };
+    } else {
+      return { status: 400, message: "Failed" };
+    }
+  } catch (e) {
+    return { status: 405, message: "Server Error", error: e };
+  }
+};
+
 export const getConfig = () => {
   return {
     serverApiUrl: process.env.NEXT_PUBLIC_SERVER_API_URL || "",

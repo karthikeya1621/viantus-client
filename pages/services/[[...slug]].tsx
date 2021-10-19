@@ -34,7 +34,9 @@ const ServicePage = ({ data }: any) => {
       <div className="grid grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto mb-14">
         <div className="col-span-4">
           <div className={styles.servicecontent}>
-            <div dangerouslySetInnerHTML={{ __html: data?.content + "" }}></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: data?.content || "" }}
+            ></div>
           </div>
         </div>
         <div className="col-span-4">
