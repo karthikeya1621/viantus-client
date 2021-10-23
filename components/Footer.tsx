@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center text-sm py-4 border-t border-opacity-40 text-gray-400">
-        © Copyright 2020, Viantus IT Solutions. All Rights Reserved.
+        © Copyright 2020, Viantus Technologies. All Rights Reserved.
       </div>
     </div>
   );

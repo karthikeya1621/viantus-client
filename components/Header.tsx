@@ -33,7 +33,7 @@ const Header = () => {
     <div
       className={styles.headercontainer + " " + (isFixed ? styles.sticky : "")}
     >
-      <div className="grid grid-cols-12 max-w-screen-lg mx-auto h-full">
+      <div className="grid grid-cols-12 max-w-screen-lg mx-auto h-full relative">
         <div className="col-span-4 h-full flex items-center">
           <Link href="/" passHref>
             <a className={styles.logo}>

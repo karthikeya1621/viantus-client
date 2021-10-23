@@ -9,7 +9,7 @@ const CareersPage = ({ data }: any) => {
     <div className={styles.careerspagecontainer}>
       <div className={styles.bannercontainer}>
         <div className={styles.bgimage}>
-          <Image src={`/images/test.jpg`} layout="fill" objectFit="cover" />
+          <Image src="/images/test.jpg" layout="fill" objectFit="cover" />
         </div>
         <div className={styles.bgoverlay}></div>
         <div className={styles.bannercontent}>

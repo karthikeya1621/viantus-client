@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { getMenus, getSiteInfo } from "../utils";
+import { useBreakpoints } from "react-breakpoints-hook";
 
 export const AppContext = createContext<any>(null);
 
@@ -7,6 +8,12 @@ export const AppProvider = ({ children }: any) => {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
   const [siteInfo, setSiteInfo] = useState<any>(null);
   const [menus, setMenus] = useState<any[]>([]);
+  const breakpoints = useBreakpoints({
+    xs: { min: 0, max: 360 },
+    sm: { min: 361, max: 960 },
+    md: { min: 961, max: 1400 },
+    lg: { min: 1401, max: null },
+  });
 
   useEffect(() => {
     setIsAppLoaded(true);
@@ -33,7 +40,7 @@ export const AppProvider = ({ children }: any) => {
   };
 
   return (
-    <AppContext.Provider value={{ isAppLoaded, siteInfo, menus }}>
+    <AppContext.Provider value={{ isAppLoaded, siteInfo, menus, breakpoints }}>
       {children}
     </AppContext.Provider>
   );

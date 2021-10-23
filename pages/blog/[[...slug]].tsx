@@ -19,11 +19,13 @@ const BlogPage = ({ data }: any) => {
       <div className={styles.bannercontainer}>
         <div className={styles.bgimage}>
           {data?.banner && (
-            <Image
-              src={`${data?.banner?.url}`}
-              layout="fill"
-              objectFit="cover"
-            />
+            <>
+              <Image
+                src={`${data?.banner?.url}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </>
           )}
         </div>
         <div className={styles.bgoverlay}></div>

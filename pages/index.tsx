@@ -72,8 +72,9 @@ export default function Home({ data }: any) {
                 </div>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${data.featuredServices[0].banner.formats.small.url}`}
+                    priority={true}
                     layout="fill"
+                    src={`${data.featuredServices[0].banner.formats.small.url}`}
                     objectFit="cover"
                   />
                 </div>
@@ -83,8 +84,9 @@ export default function Home({ data }: any) {
               <div className={styles.servicebox}>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${data.featuredServices[1].banner.formats.small.url}`}
+                    priority={true}
                     layout="fill"
+                    src={`${data.featuredServices[1].banner.formats.small.url}`}
                     objectFit="cover"
                   />
                 </div>
@@ -107,8 +109,9 @@ export default function Home({ data }: any) {
                 </div>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${data.featuredServices[2].banner.formats.small.url}`}
+                    priority={true}
                     layout="fill"
+                    src={`${data.featuredServices[2].banner.formats.small.url}`}
                     objectFit="cover"
                   />
                 </div>
@@ -118,8 +121,9 @@ export default function Home({ data }: any) {
               <div className={styles.servicebox}>
                 <div className={styles.serviceimage}>
                   <Image
-                    src={`${data.featuredServices[3].banner.formats.small.url}`}
+                    priority={true}
                     layout="fill"
+                    src={`${data.featuredServices[3].banner.formats.small.url}`}
                     objectFit="cover"
                   />
                 </div>
@@ -145,7 +149,10 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[0].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
+                        priority={true}
+                        layout="fill"
                         src={`${data.whyUs.reason[0].icon.formats.small}`}
+                        objectFit="contain"
                       />
                     </div>
                   ) : (
@@ -162,7 +169,10 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[2].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
+                        priority={true}
+                        layout="fill"
                         src={`${data.whyUs.reason[2].icon.formats.small}`}
+                        objectFit="contain"
                       />
                     </div>
                   ) : (
@@ -181,7 +191,10 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[1].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
+                        priority={true}
+                        layout="fill"
                         src={`${data.whyUs.reason[1].icon.formats.small}`}
+                        objectFit="contain"
                       />
                     </div>
                   ) : (
@@ -198,7 +211,10 @@ export default function Home({ data }: any) {
                   {data.whyUs.reason[3].icon ? (
                     <div className="relative w-14 h-14">
                       <Image
+                        priority={true}
+                        layout="fill"
                         src={`${data.whyUs.reason[3].icon.formats.small}`}
+                        objectFit="contain"
                       />
                     </div>
                   ) : (
@@ -224,13 +240,16 @@ export default function Home({ data }: any) {
                 <a className={styles.blogbox}>
                   <div className={styles.blogimage}>
                     {blog.banner && (
-                      <Image
-                        placeholder="blur"
-                        blurDataURL="/images/placeholder.gif"
-                        src={`${blog?.banner?.formats?.small?.url}`}
-                        layout="fill"
-                        objectFit="cover"
-                      />
+                      <>
+                        <Image
+                          placeholder="blur"
+                          blurDataURL="/images/placeholder.gif"
+                          priority={true}
+                          layout="fill"
+                          src={`${blog?.banner?.formats?.small?.url}`}
+                          objectFit="cover"
+                        />
+                      </>
                     )}
                   </div>
                   <div className={styles.blogtitle}>{blog.title}</div>
