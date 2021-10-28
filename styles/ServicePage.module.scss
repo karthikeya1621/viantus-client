@@ -1,4 +1,5 @@
 .servicepagecontainer {
+  @apply w-screen;
   .bannercontainer {
     @apply relative w-full;
     transform: translateY(-80px);

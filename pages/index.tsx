@@ -143,7 +143,7 @@ export default function Home({ data }: any) {
         <div className={styles.whyuscontainer}>
           <h1 className="heading1">Why Us?</h1>
           <div className="grid grid-cols-2 gap-2 mx-auto w-full max-w-screen-lg">
-            <div className="col-span-1">
+            <div className="col-span-2 md:col-span-1 px-3 md:px-0">
               {data.whyUs.reason[0] && (
                 <div className={styles.whyusbox}>
                   {data.whyUs.reason[0].icon ? (
@@ -185,7 +185,7 @@ export default function Home({ data }: any) {
                 </div>
               )}
             </div>
-            <div className="col-span-1">
+            <div className="col-span-2 md:col-span-1 px-3 md:px-0">
               {data.whyUs.reason[1] && (
                 <div className={styles.whyusbox}>
                   {data.whyUs.reason[1].icon ? (

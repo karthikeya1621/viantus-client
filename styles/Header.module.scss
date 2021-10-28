@@ -16,6 +16,7 @@
   }
 
   nav {
+    @apply hidden;
     ul {
       @apply flex justify-end;
 
@@ -57,6 +58,64 @@
           }
         }
       }
+    }
+  }
+
+  .sidenav {
+    @apply flex fixed bg-white top-0 right-0 bottom-0 h-screen w-screen text-gray-700;
+    padding-top: 120px;
+    transition: all 0.7s ease;
+    transform: translateX(800px);
+    z-index: 9;
+    &.open {
+      transform: translateX(0px);
+    }
+
+    .menuitem {
+      @apply text-center font-extrabold text-2xl mb-3;
+
+      .menuclose::before {
+        transform: rotate(0deg);
+        position: relative;
+        top: 2px;
+        transition: all 0.3s ease;
+      }
+      .menuopen::before {
+        transform: rotate(180deg);
+      }
+
+      .submenu {
+        @apply text-lg py-2 bg-gray-200 text-gray-600;
+        li {
+          @apply my-1;
+        }
+      }
+    }
+  }
+
+  .menuicon {
+    @apply fixed text-white text-2xl cursor-pointer;
+    right: 24px;
+    top: 24px;
+    z-index: 10;
+    &.open {
+      @apply text-gray-900;
+    }
+  }
+}
+
+@screen md {
+  .headercontainer {
+    nav {
+      @apply flex;
+    }
+
+    .sidenav {
+      @apply hidden;
+    }
+
+    .menuicon {
+      @apply hidden;
     }
   }
 }

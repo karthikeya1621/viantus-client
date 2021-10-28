@@ -56,8 +56,8 @@ const ContactPage = () => {
           <h1>Contact Us</h1>
         </div>
       </div>
-      <div className="grid grid-cols-6 gap-2 w-full mx-auto max-w-screen-lg">
-        <div className="col-span-3">
+      <div className="grid grid-cols-6 gap-2 w-full mx-auto max-w-screen-lg px-3 md:px-0">
+        <div className="col-span-6 md:col-span-3">
           <h1 className="heading1 mb-8">Interested in working with us?</h1>
           {siteInfo &&
             siteInfo?.officeLocations?.map((office: any) => (
@@ -69,7 +69,7 @@ const ContactPage = () => {
               </div>
             ))}
         </div>
-        <div className="col-span-3">
+        <div className="col-span-6 md:col-span-3">
           <h2 className="heading1">Send us a message</h2>
           <form className="form1" onSubmit={handleSubmit(onSubmit)}>
             <div className="formgroup">

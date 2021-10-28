@@ -6,6 +6,7 @@ export const AppContext = createContext<any>(null);
 
 export const AppProvider = ({ children }: any) => {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [siteInfo, setSiteInfo] = useState<any>(null);
   const [menus, setMenus] = useState<any[]>([]);
   const breakpoints = useBreakpoints({
@@ -40,7 +41,16 @@ export const AppProvider = ({ children }: any) => {
   };
 
   return (
-    <AppContext.Provider value={{ isAppLoaded, siteInfo, menus, breakpoints }}>
+    <AppContext.Provider
+      value={{
+        isAppLoaded,
+        siteInfo,
+        menus,
+        breakpoints,
+        isSideMenuOpen,
+        setIsSideMenuOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

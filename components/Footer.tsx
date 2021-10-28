@@ -12,8 +12,8 @@ const Footer = () => {
   const { menu: menuLinks } = useMenu("FooterMenuUsefulLinks");
   return (
     <div className={styles.footercontainer}>
-      <div className="grid grid-cols-12 gap-2 w-full relative mx-auto max-w-screen-lg py-20">
-        <div className="col-span-2">
+      <div className="grid grid-cols-12 gap-2 w-full relative mx-auto max-w-screen-lg px-5 py-10 md:px-0 md:py-20">
+        <div className="col-span-6 md:col-span-2">
           <h3>Navigation</h3>
           {menuNav &&
             menuNav.items.map((mi: any) => (
@@ -24,7 +24,7 @@ const Footer = () => {
               </Link>
             ))}
         </div>
-        <div className="col-span-2">
+        <div className="col-span-6 md:col-span-2">
           <h3>Useful Links</h3>
           {menuLinks &&
             menuLinks.items.map((mi: any) => (
@@ -35,7 +35,7 @@ const Footer = () => {
               </Link>
             ))}
         </div>
-        <div className="col-span-5">
+        <div className="col-span-12 md:col-span-5">
           <h3>Contact Us</h3>
           <h5 className="uppercase font-semibold text-primary">
             Corporate Headquarters
@@ -55,7 +55,7 @@ const Footer = () => {
             </h6>
           </a>
         </div>
-        <div className="col-span-2 flex items-center justify-center flex-col">
+        <div className="col-span-12 md:col-span-2 flex items-center justify-center flex-col">
           <div className="w-full relative" style={{ height: "90%" }}>
             <Image
               src="/images/logo_with_text.png"

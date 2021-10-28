@@ -34,7 +34,7 @@ const BlogPage = ({ data }: any) => {
         </div>
       </div>
       <div className="grid grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto mb-14">
-        <div className="col-span-3">
+        <div className="col-span-4 md:col-span-3">
           <div className={styles.blogcontent}>
             <div className={styles.bloginfo}>
               <span>{moment(data?.published_at).format("ll")}</span>
