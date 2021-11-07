@@ -9,6 +9,9 @@ import { useRouter } from "next/router";
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
   const { menu } = useMenu("ServicesMenu");
+  const { menu: aboutMenu } = useMenu("AboutUsMenu");
+  const { menu: solutionsMenu } = useMenu("SolutionsMenu");
+  const { menu: staffingMenu } = useMenu("StaffingMenu");
   const { breakpoints, isSideMenuOpen, setIsSideMenuOpen } =
     useContext(AppContext);
   const [isExpandServices, setIsExpandServices] = useState(false);
@@ -62,7 +65,37 @@ const Header = () => {
           </Link>
         </div>
         <div className="col-span-8 h-full">
-          <nav className="h-full w-full justify-end items-center">
+          <nav
+            className="w-full justify-end items-center text-sm"
+            style={{ height: "50%", position: "relative" }}
+          >
+            <ul>
+              <Link href="/industries" passHref>
+                <a className={styles.menuitem}>
+                  <li>Industries</li>
+                </a>
+              </Link>
+              <Link href="/blog" passHref>
+                <a className={styles.menuitem}>
+                  <li>Blog</li>
+                </a>
+              </Link>
+              <Link href="/careers" passHref>
+                <a className={styles.menuitem}>
+                  <li>Careers</li>
+                </a>
+              </Link>
+              <Link href="/contact" passHref>
+                <a className={styles.menuitem}>
+                  <li>Contact Us</li>
+                </a>
+              </Link>
+            </ul>
+          </nav>
+          <nav
+            style={{ height: "50%", position: "relative" }}
+            className="w-full justify-end items-center"
+          >
             <ul className="h-full">
               <Link href="/" passHref>
                 <a className={styles.menuitem}>
@@ -91,25 +124,65 @@ const Header = () => {
                   </div>
                 )}
               </li>
-              <Link href="/blog" passHref>
-                <a className={styles.menuitem}>
-                  <li>Blog</li>
-                </a>
+              <Link href="/about">
+                <li className={styles.menuitem}>
+                  <span>About Us</span>
+                  {aboutMenu && (
+                    <div className={styles.submenu}>
+                      <ul>
+                        {aboutMenu.items.map((mi: any) => (
+                          <Link href={`${mi.link}`} key={mi.id} passHref>
+                            <a>
+                              <li>
+                                <span>{mi.title}</span>
+                              </li>
+                            </a>
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
               </Link>
-              <Link href="/careers" passHref>
-                <a className={styles.menuitem}>
-                  <li>Careers</li>
-                </a>
+              <Link href="/solutions">
+                <li className={styles.menuitem}>
+                  <span>Solutions</span>
+                  {solutionsMenu && (
+                    <div className={styles.submenu}>
+                      <ul>
+                        {solutionsMenu.items.map((mi: any) => (
+                          <Link href={`${mi.link}`} key={mi.id} passHref>
+                            <a>
+                              <li>
+                                <span>{mi.title}</span>
+                              </li>
+                            </a>
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
               </Link>
-              <Link href="/contact" passHref>
-                <a className={styles.menuitem}>
-                  <li>Contact Us</li>
-                </a>
-              </Link>
-              <Link href="/about" passHref>
-                <a className={styles.menuitem}>
-                  <li>About Us</li>
-                </a>
+              <Link href="/about">
+                <li className={styles.menuitem}>
+                  <span>Staffing</span>
+                  {staffingMenu && (
+                    <div className={styles.submenu}>
+                      <ul>
+                        {staffingMenu.items.map((mi: any) => (
+                          <Link href={`${mi.link}`} key={mi.id} passHref>
+                            <a>
+                              <li>
+                                <span>{mi.title}</span>
+                              </li>
+                            </a>
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
               </Link>
             </ul>
           </nav>

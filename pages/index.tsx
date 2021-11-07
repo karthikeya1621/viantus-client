@@ -39,7 +39,7 @@ export default function Home({ data }: any) {
             <p>{data?.hero.description}</p>
           </div>
 
-          <div ref={statsRef} className={styles.statsbox}>
+          {/* <div ref={statsRef} className={styles.statsbox}>
             {data?.numberStats?.map((stat: any) => (
               <div key={stat.id}>
                 <h4>
@@ -51,6 +51,21 @@ export default function Home({ data }: any) {
                   {stat?.suffix}
                 </h4>
                 <h6>{stat.title}</h6>
+              </div>
+            ))}
+          </div> */}
+
+          <div className={styles.partnersbox}>
+            {data?.partners?.map((partner: any) => (
+              <div key={partner.id}>
+                <div className={styles.partnerimg}>
+                  <Image
+                    layout="fill"
+                    objectFit="contain"
+                    src={partner?.logo?.url}
+                    quality={100}
+                  />
+                </div>
               </div>
             ))}
           </div>

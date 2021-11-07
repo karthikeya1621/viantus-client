@@ -39,6 +39,23 @@
           }
         }
       }
+
+      .partnersbox {
+        @apply mx-auto absolute py-4 px-3 rounded bg-primary shadow-lg flex justify-around;
+        bottom: -50px;
+        width: calc(100% - 24px);
+        height: 80px;
+
+        & > div {
+          @apply flex justify-center items-center relative h-full;
+          flex-grow: 1;
+          .partnerimg {
+            @apply relative;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
