@@ -25,4 +25,54 @@
       }
     }
   }
+
+  .content {
+    @apply px-3 border-b;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    h1 {
+      @apply font-semibold text-3xl text-primary relative mx-auto max-w-max block;
+      margin-bottom: 48px;
+
+      &::after {
+        @apply absolute bg-gray-800;
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        bottom: -10px;
+        left: -5px;
+      }
+    }
+
+    h2 {
+      @apply mt-6 mb-2 font-semibold text-primary text-xl;
+    }
+
+    p {
+      @apply my-3;
+
+      b {
+        @apply font-semibold;
+      }
+    }
+
+    strong,
+    b {
+      @apply text-gray-800;
+    }
+
+    ul {
+      @apply pb-5 block pl-5;
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
+
+  .pin {
+    @apply absolute;
+    top: -100px;
+  }
 }

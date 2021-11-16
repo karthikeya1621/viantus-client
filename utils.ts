@@ -1,6 +1,10 @@
 export const getPage = async (pageName: string) => {
   try {
-    const response = await fetch(`${process.env.SERVER_API_URL}/${pageName}`);
+    const response = await fetch(
+      `${
+        process.env.NEXT_PUBLIC_SERVER_API_URL || process.env.SERVER_API_URL
+      }/${pageName}`
+    );
     const result = await response.json();
     if (result.id) {
       return { status: 200, message: "Success", data: result };
