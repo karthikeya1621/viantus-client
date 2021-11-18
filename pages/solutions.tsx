@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/AboutPage.module.scss";
+import styles from "../styles/SolutionsPage.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getPage } from "../utils";
 import useMenu from "../hooks/useMenu";
 
-const AboutPage = () => {
+const SolutionsPage = () => {
   const router = useRouter();
   const [section, setSection] = useState("");
   const [data, setData] = useState(null);
   const [keys, setKeys] = useState<any[]>([]);
-  const { menu } = useMenu("AboutUsMenu");
+  const { menu } = useMenu("SolutionsMenu");
 
   useEffect(() => {
     fetchData();
@@ -27,7 +27,7 @@ const AboutPage = () => {
   }, [router.asPath]);
 
   const fetchData = async () => {
-    const { data } = await getPage("about-us");
+    const { data } = await getPage("solutions");
     if (data) {
       setData(sanitizeData(data));
 
@@ -77,14 +77,14 @@ const AboutPage = () => {
   }, [section, data]);
 
   return (
-    <div className={styles.aboutpagecontainer}>
+    <div className={styles.solutionspagecontainer}>
       <div className={styles.bannercontainer}>
         <div className={styles.bgimage}>
           <Image src="/images/test.jpg" layout="fill" objectFit="cover" />
         </div>
         <div className={styles.bgoverlay}></div>
         <div className={styles.bannercontent}>
-          <h1>About Us</h1>
+          <h1>Solutions</h1>
         </div>
       </div>
 
@@ -104,4 +104,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default SolutionsPage;

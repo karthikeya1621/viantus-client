@@ -164,7 +164,7 @@ const Header = () => {
                   )}
                 </li>
               </Link>
-              <Link href="/about">
+              <Link href="/staffing">
                 <li className={styles.menuitem}>
                   <span>Staffing</span>
                   {staffingMenu && (
