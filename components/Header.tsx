@@ -15,6 +15,9 @@ const Header = () => {
   const { breakpoints, isSideMenuOpen, setIsSideMenuOpen } =
     useContext(AppContext);
   const [isExpandServices, setIsExpandServices] = useState(false);
+  const [isExpandAbout, setIsExpandAbout] = useState(false);
+  const [isExpandSolutions, setIsExpandSolutions] = useState(false);
+  const [isExpandStaffing, setIsExpandStaffing] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -40,7 +43,7 @@ const Header = () => {
   useEffect(() => {
     // setIsExpandServices(false);
     setIsSideMenuOpen(false);
-  }, [router.pathname]);
+  }, [router.asPath]);
 
   return (
     <div
@@ -230,6 +233,67 @@ const Header = () => {
                 </div>
               )}
             </li>
+
+            <li
+              className={styles.menuitem}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsExpandSolutions(!isExpandSolutions);
+              }}
+            >
+              <span>Solutions</span>{" "}
+              <span
+                className={`mdi mdi-chevron-down ${
+                  isExpandSolutions ? styles.menuopen : styles.menuclose
+                }`}
+              ></span>
+              {solutionsMenu && isExpandSolutions && (
+                <div className={styles.submenu}>
+                  <ul>
+                    {solutionsMenu.items.map((mi: any) => (
+                      <Link href={`${mi.link}`} key={mi.id} passHref>
+                        <a>
+                          <li>
+                            <span>{mi.title}</span>
+                          </li>
+                        </a>
+                      </Link>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+
+            <li
+              className={styles.menuitem}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsExpandStaffing(!isExpandStaffing);
+              }}
+            >
+              <span>Staffing</span>{" "}
+              <span
+                className={`mdi mdi-chevron-down ${
+                  isExpandStaffing ? styles.menuopen : styles.menuclose
+                }`}
+              ></span>
+              {staffingMenu && isExpandStaffing && (
+                <div className={styles.submenu}>
+                  <ul>
+                    {staffingMenu.items.map((mi: any) => (
+                      <Link href={`${mi.link}`} key={mi.id} passHref>
+                        <a>
+                          <li>
+                            <span>{mi.title}</span>
+                          </li>
+                        </a>
+                      </Link>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+
             <Link href="/blog" passHref>
               <a className={styles.menuitem}>
                 <li>Blog</li>
@@ -245,11 +309,36 @@ const Header = () => {
                 <li>Contact Us</li>
               </a>
             </Link>
-            <Link href="/about" passHref>
-              <a className={styles.menuitem}>
-                <li>About Us</li>
-              </a>
-            </Link>
+
+            <li
+              className={styles.menuitem}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsExpandAbout(!isExpandAbout);
+              }}
+            >
+              <span>About Us</span>{" "}
+              <span
+                className={`mdi mdi-chevron-down ${
+                  isExpandAbout ? styles.menuopen : styles.menuclose
+                }`}
+              ></span>
+              {aboutMenu && isExpandAbout && (
+                <div className={styles.submenu}>
+                  <ul>
+                    {aboutMenu.items.map((mi: any) => (
+                      <Link href={`${mi.link}`} key={mi.id} passHref>
+                        <a>
+                          <li>
+                            <span>{mi.title}</span>
+                          </li>
+                        </a>
+                      </Link>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
       </div>
