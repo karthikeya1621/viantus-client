@@ -14,7 +14,7 @@ const AboutPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [menu]);
 
   useEffect(() => {
     const path = router.asPath;
@@ -29,7 +29,8 @@ const AboutPage = () => {
   const fetchData = async () => {
     const { data } = await getPage("about-us");
     if (data) {
-      setData(sanitizeData(data));
+      const sanitizedData = sanitizeData(data);
+      setData(sanitizedData);
 
       if (menu && menu.items) {
         const keys = (menu.items as any[])
@@ -38,7 +39,11 @@ const AboutPage = () => {
             return link;
           })
           .filter((link) => !!link);
-        setKeys(keys);
+
+        const extras = Object.keys(sanitizedData).filter(
+          (dKey) => !keys.includes(dKey)
+        );
+        setKeys([...keys, ...extras]);
       }
     } else {
       setData(null);
@@ -69,9 +74,11 @@ const AboutPage = () => {
       if (section == "") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        document
-          .getElementById(`_${section}`)
-          ?.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          document
+            .getElementById(`_${section}`)
+            ?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
       }
     }
   }, [section, data]);
