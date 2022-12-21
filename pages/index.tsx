@@ -25,13 +25,13 @@ export default function Home({ data }: any) {
       <div className={styles.herocontainer}>
         {data && (
           <div className={styles.bgimage}>
-            <Image
+            {/* <Image
               priority={true}
               layout="fill"
               src={`${data?.hero?.background?.url}`}
               objectFit="cover"
               unoptimized={true}
-            />
+            /> */}
             <video src={`${data?.hero?.background?.url}`} muted={true} autoPlay={true} loop={true} controls={false} ></video>
           </div>
         )}
