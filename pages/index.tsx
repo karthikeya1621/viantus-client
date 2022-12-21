@@ -32,6 +32,7 @@ export default function Home({ data }: any) {
               objectFit="cover"
               unoptimized={true}
             />
+            <video src={`${data?.hero?.background?.url}`} muted={true} autoPlay={true} loop={true} controls={false} ></video>
           </div>
         )}
         <div className={styles.herocontent}>

@@ -9,6 +9,10 @@
     .bgimage {
       @apply absolute w-full h-full;
       z-index: 0;
+
+      video {
+        @apply absolute w-full h-full m-0 p-0;
+      }
     }
 
     .herocontent {
