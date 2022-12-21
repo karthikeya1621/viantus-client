@@ -14,11 +14,20 @@ const nextConfig = {
   },
   images: {
     disableStaticImages: true,
-    domains: ["localhost", "viantus-files.s3.ap-south-1.amazonaws.com"],
+    domains: ["localhost", "viantus-files.s3.ap-south-1.amazonaws.com", "viantus.com"],
   },
 };
 
 const config = withPlugins(
+  [
+    [
+      optimizedImages,
+      {
+        // optimisation disabled by default, to enable check https://github.com/cyrilwanner/next-optimized-images
+        optimizeImages: false,
+      },
+    ],
+  ],
   nextConfig
 );
 
