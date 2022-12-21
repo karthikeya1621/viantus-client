@@ -30,6 +30,7 @@ export default function Home({ data }: any) {
               layout="fill"
               src={`${data?.hero?.background?.url}`}
               objectFit="cover"
+              unoptimized={true}
             />
           </div>
         )}
