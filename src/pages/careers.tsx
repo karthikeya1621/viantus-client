@@ -14,6 +14,7 @@ const CareersPage = () => {
 
   const getData = async () => {
     const { props: { data } } = await getStaticProps();
+    console.log(data);
     setData(data);
   }
 
@@ -43,7 +44,7 @@ const CareersPage = () => {
                     <span>{career?.type}</span> |{" "}
                     <span>
                       <small>Posted on:</small>{" "}
-                      {moment(career?.published_at).format("ll")}
+                      {moment(career?.updatedAt).format("ll")}
                     </span>
                   </div>
                 </div>

@@ -278,7 +278,7 @@ export default function Home() {
                 </div>
                 <div className={styles.blogtitle}>{blog.title}</div>
                 <div className={styles.bloginfo}>
-                  <small>on</small> {moment(blog.published_at).format("ll")}
+                  <small>on</small> {moment(blog.updatedAt).format("ll")}
                 </div>
                 <div className={styles.blogcontent}>
                   {/* 250 chars limit */}

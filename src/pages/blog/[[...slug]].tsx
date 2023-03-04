@@ -51,7 +51,7 @@ const BlogPage = () => {
         <div className="col-span-4 md:col-span-3">
           <div className={styles.blogcontent}>
             <div className={styles.bloginfo}>
-              <span>{moment(data?.published_at).format("ll")}</span>
+              <span>{moment(data?.updatedAt).format("ll")}</span>
               <div>
                 <span className="mdi mdi-facebook"></span>
                 <span className="mdi mdi-linkedin"></span>
