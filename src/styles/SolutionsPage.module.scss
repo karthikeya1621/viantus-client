@@ -1,0 +1,82 @@
+.solutionspagecontainer {
+  @apply w-full;
+
+  .bannercontainer {
+    @apply relative w-full;
+    transform: translateY(-80px);
+    height: 400px;
+
+    .bgimage {
+      @apply absolute w-full h-full;
+      z-index: 0;
+    }
+
+    .bgoverlay {
+      @apply absolute w-full h-full bg-black opacity-70 pointer-events-none;
+      z-index: 1;
+    }
+
+    .bannercontent {
+      @apply relative w-full mx-auto max-w-screen-lg text-center;
+      z-index: 3;
+      h1 {
+        @apply text-4xl md:text-6xl font-extrabold text-white;
+        padding-top: 180px;
+      }
+    }
+  }
+
+  .content {
+    @apply px-3 border-b;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    h1 {
+      @apply font-semibold text-3xl text-primary relative mx-auto max-w-max block;
+      margin-bottom: 48px;
+
+      &::after {
+        @apply absolute bg-gray-800;
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        bottom: -10px;
+        left: -5px;
+      }
+    }
+
+    h2 {
+      @apply mt-6 mb-2 font-semibold text-primary text-2xl;
+    }
+
+    h6 {
+      @apply text-primary font-semibold mt-1;
+    }
+
+    p {
+      @apply mb-3 mt-1;
+
+      b {
+        @apply font-semibold;
+      }
+    }
+
+    strong,
+    b {
+      @apply text-gray-800;
+    }
+
+    ul {
+      @apply pb-5 block pl-5;
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
+
+  .pin {
+    @apply absolute;
+    top: -150px;
+  }
+}

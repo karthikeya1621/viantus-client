@@ -1,0 +1,121 @@
+.headercontainer {
+  @apply w-full bg-transparent relative text-white transition-all px-3;
+  transition-duration: 600ms;
+  height: 80px;
+  z-index: 1000;
+
+  &.sticky {
+    @apply fixed bg-white shadow-md text-gray-700;
+  }
+
+  .logo {
+    display: block;
+    width: 100%;
+    height: 60%;
+    position: relative;
+  }
+
+  nav {
+    @apply hidden;
+    ul {
+      @apply flex justify-end;
+
+      li {
+        @apply px-4 cursor-pointer;
+        span {
+          @apply hover:opacity-80;
+        }
+      }
+    }
+
+    .menuitem {
+      @apply font-semibold relative flex items-center transition-all;
+      border-bottom: 5px solid transparent;
+
+      &:hover {
+        border-bottom: 5px solid theme("textColor.primary.light");
+
+        .submenu {
+          @apply bg-white;
+          opacity: 1;
+          transform: translateY(5px);
+          pointer-events: all;
+        }
+      }
+
+      .submenu {
+        @apply absolute rounded-lg rounded-tl-none shadow-xl left-0 py-3 transition-all text-gray-800;
+        top: 100%;
+        min-width: 200px;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+
+        ul {
+          @apply flex flex-col;
+          li {
+            @apply max-w-max my-2;
+          }
+        }
+      }
+    }
+  }
+
+  .sidenav {
+    @apply flex fixed bg-white top-0 right-0 bottom-0 h-screen w-screen text-gray-700;
+    padding-top: 120px;
+    transition: all 0.7s ease;
+    transform: translateX(800px);
+    z-index: 9;
+    &.open {
+      transform: translateX(0px);
+    }
+
+    .menuitem {
+      @apply text-center font-extrabold text-2xl mb-3;
+
+      .menuclose::before {
+        transform: rotate(0deg);
+        position: relative;
+        top: 2px;
+        transition: all 0.3s ease;
+      }
+      .menuopen::before {
+        transform: rotate(180deg);
+      }
+
+      .submenu {
+        @apply text-lg py-2 bg-gray-200 text-gray-600;
+        li {
+          @apply my-1;
+        }
+      }
+    }
+  }
+
+  .menuicon {
+    @apply fixed text-white text-2xl cursor-pointer;
+    right: 24px;
+    top: 24px;
+    z-index: 10;
+    &.open {
+      @apply text-gray-900;
+    }
+  }
+}
+
+@screen md {
+  .headercontainer {
+    nav {
+      @apply flex;
+    }
+
+    .sidenav {
+      @apply hidden;
+    }
+
+    .menuicon {
+      @apply hidden;
+    }
+  }
+}
